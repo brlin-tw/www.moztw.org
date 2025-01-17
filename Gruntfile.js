@@ -35,6 +35,7 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					src: ['**/*.shtml', '!node_modules/**/*.shtml'],
+					dest: '_site/',
 					ext: '.html'
 				}]
 			}
@@ -42,7 +43,7 @@ module.exports = function(grunt) {
 		ssi: {
 			options: {
 				input: './',
-				output: './',
+				output: './_site/',
 				matcher: '**/*.html'
 			}
 		},
@@ -81,4 +82,7 @@ module.exports = function(grunt) {
 	});
 	//grunt.registerTask('default', ['copy', 'ssi', 'browserSync', 'watch']);
 	grunt.registerTask('default', ['browserSync']);
+
+	// 新增 build 任務
+	grunt.registerTask('build', ['copy', 'ssi']);
 };
