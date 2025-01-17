@@ -43,7 +43,7 @@ module.exports = function(grunt) {
 		ssi: {
 			options: {
 				input: './',
-				output: './',
+				output: './_site/',
 				matcher: '**/*.html'
 			}
 		},
