@@ -1,13 +1,13 @@
-# GitHub Actions workflow for deploying Jekyll site to GitHub Pages
+# GitHub Actions workflow for deploying website to GitHub Pages
 #
 # References:
 #
 # * Workflow syntax for GitHub Actions - GitHub Docs
 #   https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions
 #
-# Copyright 2024 林博仁(Buo-ren Lin) <buo.ren.lin@gmail.com>
+# Copyright 2025 林博仁(Buo-ren Lin) <buo.ren.lin@gmail.com>
 # SPDX-License-Identifier: CC-BY-SA-4.0
-name: Deploy Jekyll site to GitHub Pages
+name: Deploy site to GitHub Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -40,8 +40,8 @@ jobs:
       - name: Build with Grunt
         # Outputs to the './_site' directory by default
         run: |
-          apt-get update
-          apt-get install -y node-grunt-cli node-grunt-contrib-copy
+          sudo apt-get update
+          sudo apt-get install -y node-grunt-cli node-grunt-contrib-copy
           grunt build
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
