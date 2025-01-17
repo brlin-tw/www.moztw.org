@@ -35,6 +35,7 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					src: ['**/*.shtml', '!node_modules/**/*.shtml'],
+					dest: '_site/',
 					ext: '.html'
 				}]
 			}
