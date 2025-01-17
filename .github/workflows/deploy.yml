@@ -42,6 +42,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install --no-install-recommends -y grunt node-grunt-contrib-copy
+          npm install grunt --save-dev
           grunt build
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
