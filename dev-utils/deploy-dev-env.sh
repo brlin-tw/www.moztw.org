@@ -174,12 +174,22 @@ fi
 printf -- \
     '%s: Info: Installing the Node.js dependencies of the project...\n' \
     "${script_name}"
-if ! npm install; then
-    printf -- \
-        '%s: Error: Unable to install the Node.js dependencies of the project.\n' \
-        "${script_name}" \
-        1>&2
-    exit 2
+if test -v SUDO_USER; then
+    if ! sudo -u "${SUDO_USER}" npm install; then
+        printf -- \
+            '%s: Error: Unable to install the Node.js dependencies of the project.\n' \
+            "${script_name}" \
+            1>&2
+        exit 2
+    fi
+else
+    if ! npm install; then
+        printf -- \
+            '%s: Error: Unable to install the Node.js dependencies of the project.\n' \
+            "${script_name}" \
+            1>&2
+        exit 2
+    fi
 fi
 
 printf -- \
