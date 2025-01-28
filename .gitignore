@@ -5,3 +5,6 @@ Thumbs.db
 
 **/releases/index.html
 **/releases/*/*.html
+
+# Don't track the built site files'
+/_site/

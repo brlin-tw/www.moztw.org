@@ -40,10 +40,8 @@ jobs:
       - name: Build with Grunt
         # Outputs to the './_site' directory by default
         run: |
-          sudo apt-get update
-          sudo apt-get install --no-install-recommends -y grunt node-grunt-contrib-copy
-          npm install grunt --save-dev
-          grunt build
+          sudo ./dev-utils/deploy-dev-env.sh
+          grunt dist
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
